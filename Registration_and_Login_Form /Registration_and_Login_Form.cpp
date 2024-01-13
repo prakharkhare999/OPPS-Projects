@@ -65,6 +65,28 @@ public:
 
     }
 
+    void Search_User(string name){
+        for(int i=0;i<users.size();i++){
+            if(name==users[i].getUsername()){
+                cout<<"user is valid"<<endl;
+            }
+            
+        }
+        
+    }
+
+void Delete_User(string name){
+     for(int i=0;i<users.size();i++){
+            if(name==users[i].getUsername()){
+                users.erase(users.begin()+i);
+                cout<<"user is deleated"<<endl;
+            }
+            
+        }
+
+}
+    
+
 
 
    
@@ -87,7 +109,7 @@ int main()
         cout << "4.search user" << endl;
         cout << "5.delete user" << endl;
         cout << "6.enter your choice" << endl;
-        cout << "7.exit" << endl;
+         
         cin >> op;
 
         switch (op)
@@ -110,8 +132,15 @@ case 3:{
         usermanager.Show_User_List();
         break;
         }
-
-
+case 4:{
+        usermanager.Search_User("pk");
+        break;
+        }
+case 5:{
+    usermanager.Delete_User("pk");
+        break;
+}
+ 
 
 
 
